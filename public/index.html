@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CSS/HTML Workshop with Drivy</title>
-  </head>
-  <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-    </div>
-    <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
-    <script id="template" type="x-tmpl-mustache">
+	<header>
+		<link rel="stylesheet" href="new.css" type="text/css">
+		<title>CSS/HTML Workshop with Drivy</title>
+	</header>
+<body>
+  <div class="container">  
+  <form id="contact" action="" method="post">
+    <h3>Drivy Calculation</h3>
+    <br/>
+    <fieldset>
+      <input placeholder="Car model" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Price per day" type="text" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Price by km" type="text" tabindex="3" required>
+    </fieldset>
+	<fieldset>
+      <input placeholder="Distance in km" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+	  Rental begin date &ensp; &ensp; &ensp;
+      <input placeholder="Rental begin date" type="date" tabindex="4" required> 
+    </fieldset>
+    <fieldset>
+	   Rental end date &ensp; &ensp; &ensp; &ensp;
+      <input type="date" name="Rental end date" tabindex="5" required>
+    </fieldset>
+	<fieldset>
+		Deductible
+		<div class="squaredOne">
+	<input type="checkbox" value="None" id="squaredOne" name="check" />
+	<label for="squaredOne"></label>
+		</div>
+	</fieldset>
+	
+	<fieldset>
+	<br/>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Compute</button>
+	  <div id="actors"></div>
+      <script id="template" type="x-tmpl-mustache">
       {{#actors}}
         <div class="actor">
           <span>{{who}}</span>
@@ -29,5 +53,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
     <script src="drivy.js"></script>
     <script src="index.js"></script>
-  </body>
+    </fieldset>
+    </form>
+</div>
+</body>
 </html>
